@@ -336,6 +336,7 @@ input, select, textarea {
     font-weight: 700;
     letter-spacing: 0.08em;
     margin: 0 0 24px;
+    white-space: nowrap;
 }
 
 .hero-sub {
@@ -566,6 +567,8 @@ input, select, textarea {
 }
 
 @media (max-width: 720px) {
+    .hero-title { white-space: normal; }
+
     .nav-toggle { display: flex; }
 
     .site-nav {
