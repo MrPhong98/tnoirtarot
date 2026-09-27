@@ -290,6 +290,31 @@ input, select, textarea {
     transition: transform 0.35s ease-out;
 }
 
+.hero-orbit {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: relative;
+    animation: orbit-spin var(--orbit-dur, 18s) linear infinite;
+}
+
+@keyframes orbit-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero-orbit-offset {
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: orbit-counter var(--orbit-dur, 18s) linear infinite;
+}
+
+@keyframes orbit-counter {
+    from { transform: translate(var(--radius, 20px), 0) rotate(0deg); }
+    to { transform: translate(var(--radius, 20px), 0) rotate(-360deg); }
+}
+
 .hero-card-face {
     display: block;
     width: var(--size);
@@ -297,12 +322,6 @@ input, select, textarea {
     border: 1px solid rgba(243, 241, 236, 0.4);
     border-radius: 12%;
     opacity: 0.16;
-    animation: card-float var(--dur, 9s) ease-in-out var(--delay, 0s) infinite;
-}
-
-@keyframes card-float {
-    0%, 100% { transform: rotate(var(--rot)) translateY(0); }
-    50% { transform: rotate(calc(var(--rot) + 3deg)) translateY(-14px); }
 }
 
 .hero-inner {
